@@ -6,31 +6,25 @@
  **************************************************************************/
  
  /**
- * @file server.h
+ * @file service_impl.cpp
  * @author wangtao(wtzhuque@163.com)
- * @date 2023/09/04 21:36:24
+ * @date 2023/09/06 11:33:10
  * @version $Revision$ 
  * @brief 
  *  
  **/
-#ifndef MINLLM_SERVER_H
-#define MINLLM_SERVER_H
 
 #include "service_impl.h"
 
 namespace minllm {
 
-class Server {
-public:
-    Server();
+void ServiceImpl::chat(::google::protobuf::RpcController* controller,
+                       const ::minllm::ChatRequest* request,
+                       ::minllm::ChatResponse* response,
+                       ::google::protobuf::Closure* done) {
 
-    ~Server();
-
-    int start_on_port(int port);
-}; // class Server
+}
 
 } // namespace minllm
-
-#endif  //MINLLM_SERVER_H
 
 /* vim: set ts=4 sw=4 sts=4 tw=100 */

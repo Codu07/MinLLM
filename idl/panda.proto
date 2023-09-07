@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package minllm;
+
+option cc_generic_services = true;
+
+message Session {
+    uint64 id = 1;
+}; // message Session
+
+message ChatRequest {
+    Session session = 1;
+    string question = 2;
+}; // message ChatRequest
+
+message ChatResponse {
+    Session session = 1;
+    string response = 2;
+}; // message ChatResponse
+
+service Panda {
+    rpc chat(ChatRequest) returns(ChatResponse);
+}; // service Panda

@@ -70,6 +70,7 @@ include_directories(${GFLAGS_INCLUDE_PATH})
 find_package(OpenSSL)
 include_directories(${OPENSSL_INCLUDE_DIR})
 
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CPP_FLAGS} -O2 -std=c++2a -D__const__= -pipe -W -Wall -Wno-unused-parameter -fPIC -fno-omit-frame-pointer")
 
 set(LIBS
@@ -87,6 +88,7 @@ set(LIBS
     )
 
 aux_source_directory(./src DIR_SRCS)
+aux_source_directory(./idl DIR_IDLS)
 
 add_executable(panda ${DIR_SRCS} ${DIR_IDLS})
 target_link_libraries(panda ${LIBS})

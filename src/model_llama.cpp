@@ -27,7 +27,7 @@ LlamaModel::~LlamaModel() {
 }
 
 error_type_t LlamaModel::load_from_path(const std::string& model_path) {
-    return ERROR_UNKNOWN;
+    return ERROR_NOT_IMPL;
 }
 
 } // namespace minllm

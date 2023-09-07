@@ -40,7 +40,8 @@ Model* Model::create_model_from(const std::string& model_path, const ModelConfig
 }
 
 error_type_t Model::load_from_path(const std::string& model_path) {
-    return ERROR_UNKNOWN;
+    
+    return ERROR_NOT_IMPL;
 }
 
 } // namespace minllm
