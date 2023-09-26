@@ -18,6 +18,15 @@ message ChatResponse {
     string response = 2;
 }; // message ChatResponse
 
+message CompletionRequest {
+    Session session = 1;
+}; // message CompletionRequest
+
+message CompletionResponse {
+    Session session = 1;
+}; // message CompletionResponse
+
 service Panda {
     rpc chat(ChatRequest) returns(ChatResponse);
+    rpc completion(CompletionRequest) returns(CompletionResponse);
 }; // service Panda

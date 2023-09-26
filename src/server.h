@@ -16,6 +16,7 @@
 #ifndef MINLLM_SERVER_H
 #define MINLLM_SERVER_H
 
+#include "conf.h"
 #include "service_impl.h"
 
 namespace minllm {
@@ -26,7 +27,16 @@ public:
 
     ~Server();
 
+    int init(Configure* conf);
+
+    int destroy();
+
     int start_on_port(int port);
+
+    int wait_to_exit();
+
+private:
+    ServiceImpl* _impl {nullptr};
 }; // class Server
 
 } // namespace minllm

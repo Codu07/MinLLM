@@ -6,41 +6,32 @@
  **************************************************************************/
  
  /**
- * @file server.cpp
+ * @file conf.cpp
  * @author wangtao(wtzhuque@163.com)
- * @date 2023/09/04 21:36:29
+ * @date 2023/09/26 10:41:27
  * @version $Revision$ 
  * @brief 
  *  
  **/
 
-#include "server.h"
+#include "conf.h"
 
 namespace minllm {
 
-Server::Server()
-    : _impl(new ServiceImpl()) {
-}
-
-Server::~Server() {
-    delete _impl;
-    _impl = nullptr;
-}
-
-int Server::init(Configure* conf) {
+int Configure::load_from_yaml(const std::string& path) {
     return 0;
 }
 
-int Server::destroy() {
+int Configure::load_from_json(const std::string& path) {
     return 0;
 }
 
-int Server::start_on_port(int port) {
+int Configure::reload() {
     return 0;
 }
 
-int Server::wait_to_exit() {
-    return 0;
+void Configure::reset() {
+
 }
 
 } // namespace minllm
